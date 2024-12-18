@@ -1,26 +1,29 @@
-import java.io.File;
+import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
+    public static String[] readFile(String fileName) {
         try {
-            List<String> datas = Files.readAllLines(Paths.get("map1.txt"));
-            for(int i =0;i<datas.size();i++){
-                String lines = datas.get(i);
-                String[] data = lines.split(" ");
-                //System.out.println(Arrays.toString(data));
-                if(i==2 && data.length > 2){
-                    System.out.println(data[2]);
-                }
-            }
-
-        } catch (Exception e) {
-
+            String content = new String(Files.readAllBytes(Paths.get(fileName)));
+            String[] lines = content.split("\n");
+            return lines;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
         }
+
     }
-}
+    public static void main(String[] args) {
+        if (args.length > 0) {
+            String fileName = args[0];
+            String[] lines = readFile(fileName);
+            /*if (lines != null) {
+                for (String line : lines) {
+                    System.out.println(line);
+                }*/
+            }
+         else {
+            System.out.println("Please give me a file name.");
+        }
+}}

@@ -1,7 +1,9 @@
 public class City{
     private String name;
-    public City(String cityName){
+    private String time;
+    public City(String cityName, String time){
         this.name = cityName;
+        this.time = time;
     }
 
     public void setName(String name) {
