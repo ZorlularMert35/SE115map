@@ -1,2 +1,10 @@
 5
 A B C D E
+6
+A B 20
+A C 30
+B D 50
+D E 10
+C D 20
+C E 30
+A E

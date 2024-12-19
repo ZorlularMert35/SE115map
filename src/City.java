@@ -1,14 +1,11 @@
-public class City{
-    private String name;
-    private String time;
-    public City(String cityName, String time){
-        this.name = cityName;
-        this.time = time;
+class City {
+    private String label;
+
+    public City(String label) {
+        this.label = label;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }public String getName(){
-        return this.name;
+    public String getLabel() {
+        return label;
     }
 }
